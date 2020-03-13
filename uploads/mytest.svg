@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>A New created SVGGGGG</title>
+  <desc>Created by myself for testinggggg</desc>
+  <rect x="1.00" y="30.00" width="13.00" height="20.00" stroke="blue"/>
+  <rect x="2.00" y="4.00" width="5.76" height="30.00" stroke="blue"/>
+  <rect x="6.00" y="8.00" width="5.76" height="9.60" stroke="red"/>
+ 
+  <circle cx="32.00" cy="32.00" r="10.00" stroke="red"/>
+</svg>

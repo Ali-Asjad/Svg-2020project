@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SVG Image Viewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+    <div class = "container">
+        <h3>File Log Panel</h3>
+        <div class="form-filelog">
+            <table class="rtable" id="rtable">
+                <thead>
+                <tr>
+                    <th>Image<br>(Clicked to Download)</th>
+                    <th>FileName (Clicked to Download)</th>
+                    <th>FileSize</th>
+                    <th>Number of Rectangles</th>
+                    <th>Number of Circles</th>
+                    <th>Number of Paths</th>
+                    <th>Number of Groups</th>
+                </tr>
+                </thead>
+                <tbody id="rtbody">
+                </tbody>
+            </table>
+        </div>
+        <div class="fileupload">
+            <form ref='uploadForm'
+                  id='uploadForm'
+                  action='/upload'
+                  method='post'
+                  encType="multipart/form-data">
+                <input type="file" name="uploadFile" />
+                <input type='submit' value='Upload!'  />
+            </form>
+        </div>
+        
+        <h3 id="scrolltop">SVG View Panel</h3>
+        <form class ="show-list">
+            <label for="lists">Select A SVG file from server   :  &nbsp; &nbsp; </label>
+            <select id="show-svgs" name="show-svgs">
+            </select>
+        </form>
+        <div class="form-svgview">
+            <table class = "viewtable" id ="viewtable">
+                <thead id = "svgimg">
+                </thead>
+                <thead class = "title">
+                    <tr>
+                        <th colspan = "2">Title</th>
+                        <th colspan = "3">Description</th>
+                    </tr>
+                </thead>
+                <thead id ="headinfo">
+                </thead>
+                <tbody class="title">
+                    <tr>
+                        <td colspan = "1">Component</td>
+                        <td colspan = "3">Summary</td>
+                        <td colspan = "1">Other Attributes</td>
+                    </tr>
+                </tbody>
+                <tbody id = "bottominfo">
+                </tbody>
+            </table>
+        </div>
+        <hr id = "updatehead">
+        <div class = "from-update">
+            <table class = "updatetable" id ="updatetable">
+                <thead class = "title">
+                    <tr>
+                        <th>Property Name </th>
+                        <th>Property Value (Double click for Editable)</th>
+                    </tr>
+                </thead>
+                <tbody id = "tr_element">
+                </tbody>
+            </table>
+            <div class = "input_section">
+                <div class="propninput">
+                    <label for="filename"> Input Property Name : </label>
+                    <input type="text" id="ninput">
+                </div>
+                <div class="propvinput">
+                    <label for="filename" id = "txtvalue"> Input Property Value : </label>
+                    <textarea name="vinput" id = "vinput" cols="20" rows="4"></textarea>
+                </div>
+            </div>
+            <div class= "btn_section">
+                <div id= "refreshbtn" class = "refreshbtn">
+                    <button class="square-shadow">Refresh</button>
+                </div>
+                <div id= "uploadbtn" class = "uploadbtn">
+                    <button class="square-shadow">Update properties</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h3>Additional Functions Panel</h3>
+        <div class="form-functions">
+            <div class = "form-create">
+                <div class="title-bar">Create A SVG Image</div>
+                <div class="form-content">
+                    <div class="input-unit">
+                        <label for="filename">File Name : </label>
+                        <input type="text" id="fname">
+                    </div>
+                    <div class="input-unit">
+                        <button id="btn-create">Create SVG</button>
+                    </div>
+                </div>
+            </div>
+            <div class = "form-addshape">
+                <div class="title-bar">Add A Shape into SVG File</div>
+                <div class="form-content">
+                    <form class ="down_list">
+                        <label for="lists">Select A SVG file from server   :   </label>
+                        <select id="svgs" name="svgs">
+                        </select>
+                    </form>
+                    <form class = "value-form">
+                        <div class = "addvalue-container">
+                            <label class = "value-type"> Input Type : {"x":xVal,"y":yVal,"w":wVal,"h":hVal,"units":"unitStr"}</label>
+                            <label class = "value-exam"> Input e.x. : {"x":1,"y":2,"w":19,"h":15,"units":"cm"}</label>
+                            <div class="rect-value">
+                                <label for="filename">Input Rectangle Values : </label>
+                                <input type="text" id="rectval">
+                            </div>
+                            <div class="rect-value">
+                                <button id="btn-rect">Add Shape</button>
+                            </div>
+                            <label class = "value-type"> Input Type : {"cx":xVal,"cy":yVal,"r":rVal,"units":""}</label>
+                            <label class = "value-exam"> Input e.x. : {"cx":32,"cy":32,"r":30,"units":""}</label>
+                            <div class="circ-value">
+                                <label for="filename">Input Circles Values : </label>
+                                <input type="text" id="circval">
+                            </div>
+                            <div class="circ-value">
+                                <button id="btn-circ">Add Shape</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class = "form-scaleshape">
+                <div class="title-bar">Setting Scale shape into SVG File</div>
+                <div class="form-content">
+                    <form class ="down-list">
+                        <label for="lists">Select A SVG file from server   :   </label>
+                        <select id="scale-svgs" name="scale-svgs">
+                        </select>
+                    </form>
+                    <form class = "sclae-form">
+                        <div class = "addvalue-container">
+                            <form id = "rect_value">
+                                <div class="recinput">
+                                    <label for="filename">Input Scale Factor : </label>
+                                    <input type="text" id="rectscale" name = "rec_name">
+                                </div>
+                                <div class ="recvalue">
+                                    <button id="btn_rect" >Rectangle Scale Shape</button>
+                                </div>
+                            </form>
+                            <form id ="circ_value">
+                                <div class="circinput">
+                                    <label for="filename"> Input Scale Factor : </label>
+                                    <input type="text" id="circscale">
+                                </div>
+                                <div class="circvalue">
+                                    <button id="btn_circ"> Circle Scale Shape</button>
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

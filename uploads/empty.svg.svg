@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>A New created SVG</title>
+  <desc>Created by myself for testing</desc>
+  <rect x="1.00cm" y="2.00cm" width="40.00cm" height="41.46cm" stroke="blue"/>
+  <circle cx="32.00" cy="32.00" r="10.00" stroke="blue"/>
+</svg>

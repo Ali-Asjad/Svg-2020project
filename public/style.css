@@ -1,0 +1,385 @@
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+body {
+    height: 100%;
+    width:100%;
+    min-height: 100%;
+    line-height: 1.75;
+    background-color: #FFFFFF;
+}
+h3{
+    text-align: center;
+    margin: 30px auto;
+    color : green;
+    font-size: 34px;
+}
+img{
+    max-height:200px;
+    max-width:200px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+.form-filelog, .form-svgview{
+    margin: 30px auto;
+    max-height: 700px;
+    overflow: auto;
+}
+
+.form-update{
+    margin: 30px auto;
+    max-height: 300px;
+    overflow: auto;
+    
+}
+
+#show-svg{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.show-list{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.form-svgview{
+    max-height: 1200px;
+}
+
+.rtable {
+    vertical-align: top;
+    line-height: 3;
+    max-width: 100%;
+    width : 100%;
+    height : 500px;
+    overflow-x: auto;
+    overflow-y:auto;
+    text-align : center;
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 10px auto;
+}
+.rtable tr:hover{
+    background-color: darkgrey;
+}
+
+#bottominfo tr:hover{
+    background-color: darkgrey;
+}
+.rtable tbody{
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+
+.rtable th:nth-child(1) {
+    width:30%;
+}
+.rtable th:nth-child(2) {
+    width:20%;
+}
+.rtable th:nth-child(3), th:nth-child(4), th:nth-child(5), th:nth-child(6), th:nth-child(7) {
+    width:10%;
+}
+
+
+.rtable td:first-child,
+.rtable--flip tbody tr:first-child {
+    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 20px 100%;
+}
+
+.rtable th {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background: #f2f0e6;
+}
+
+.rtable th,
+.rtable td {
+    padding: 6px 12px;
+    border: 1px solid #d9d7ce;
+}
+
+.rtable td {
+    line-height: 5;
+}
+
+
+
+.viewtable {
+    border-spacing :2px;
+    border-color:grey;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    border: 1px solid #d9d7ce;
+    line-height : 3;
+    max-height : 400px;
+    max-width : 100%;
+    width:100%;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin: 10px auto;
+}
+.viewtable tbody, thead{
+    overflow-x: auto;
+    overflow-y:auto;
+}
+
+.viewtable th,
+.viewtable td {
+    padding: 6px 12px;
+    border: 1px solid #d9d7ce;
+}
+
+
+.viewtable tbody tr:first-child(){
+    font-weight: bold;
+    background: #f2f0e6;
+}
+
+.title {
+    font-weight: bold;
+    background: #f2f0e6;
+    border: 1px solid rgb(32, 30, 32);
+}
+
+.viewtable thead tr th img{
+    max-height: 300px;
+    max-width: 300px;
+}
+.fileupload{
+    border: 3px solid #d9d7ce;
+    padding: 20px auto;
+    width:30%;
+    margin-left : 500px;
+}
+
+.form-functions{
+    max-height: 1000px;
+}
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.form-create {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 1px solid #d9d7ce;
+    padding: 30px auto;
+    margin: 30px auto;
+    width : 40%;
+    background: #f2f0e6;
+}
+
+.form-addshape{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 1px solid #d9d7ce;
+    padding: 30px auto;
+    margin: 30px auto;
+    width : 70%;
+    background: #f2f0e6;
+}
+.form-scaleshape{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 1px solid #d9d7ce;
+    padding: 30px auto;
+    margin: 30px auto;
+    width : 40%;
+    background: #f2f0e6;
+}
+
+.form-create .title-bar, .form-addshape .title-bar, .form-scaleshape .title-bar{
+    background: #cccccc;
+    padding: 3px 10px;
+    height: 40px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width : 100%;
+    font-size: 18px;
+    color : blue;
+}
+
+.input-unit {
+    padding: 10px 20px 10px 30px;
+    margin: 10px auto;
+}
+
+.down-list{
+    text-align: center;
+}
+.rect-value{
+    padding: 10px 20px 10px 30px;
+    margin: 10px auto;
+    display : inline;
+}
+.circ-value{
+    padding: 10px 20px 10px 54px;
+    margin: 10px auto;
+    display : inline;
+}
+
+#rect_value{
+    margin: 10px auto;
+    display : inline;
+}
+
+.circvalue, .circinput{
+    margin: 10px auto;
+    display : inline;
+}
+
+#circ_value{
+    display : inline;
+    padding-left: 20px;
+}
+#circval{
+    width : 450px;
+}
+#rectval{
+    width : 450px;
+}
+#circscale{
+    width : 200px;
+}
+#rectscale{
+    width : 200px;
+}
+.value-type{
+    display : block;
+    padding: 1px 10px 3px 220px;
+    margin: 10px auto;
+    color : red;
+}
+.value-exam{
+    display : block;
+    padding: 1px 10px 3px 220px;
+    margin: 10px auto;
+    color:blue;
+}
+input[type=text]{
+    width : 200px;
+}
+#add{
+    width : 500px;
+}
+#btn-circ{
+    margin-left :-20px;
+}
+.down_list{
+    padding-left : 300px;
+}
+.addvalue-container{
+    padding-left : 30px;
+    padding-bottom: 30px;
+}
+
+.updatetable{
+    border-spacing :2px;
+    border-color:grey;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    border: 1px solid #d9d7ce;
+    line-height : 3;
+    max-height : 400px;
+    max-width : 100%;
+    width:60%;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin: 10px auto;
+}
+
+#tr_value{
+    border: 1px solid rgb(32, 30, 32);
+}
+
+
+.square-shadow {
+    background: #696be9f8;
+    color: #fff;
+    border: none;
+    border-radius: 1px;
+    font-size: 16px;
+    padding: 15px 30px;
+    text-decoration: none;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); }
+
+.uploadbtn, .refreshbtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display : inline;
+    margin:  0 auto;
+
+}
+.btn_section{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.input_section{
+    text-align: center;
+    margin : 20px 0px 20px 0px;
+
+}
+
+#tr_element tr:hover{
+    background-color: darkgrey;
+    cursor: pointer;
+}
+ 
+#ninput{
+    width:300px;
+}
+#vinput{
+    width:300px;
+}
+
+#txtvalue{
+    vertical-align: top;
+}
+@media(min-width:1200px) {
+    .container {
+        max-width: 1500px;
+    }
+}
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+}

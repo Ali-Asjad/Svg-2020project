@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="5cm" height="4cm" version="1.1">
+  <desc>Four separate rectangles</desc>
+  <rect x="0.50cm" y="10.00cm" width="2.00cm" height="1.00cm" stroke="red"/>
+  <rect x="0.50cm" y="2.00cm" width="1.00cm" height="1.50cm"/>
+  <rect x="3.00cm" y="0.50cm" width="1.50cm" height="2.00cm"/>
+  <rect x="3.50cm" y="3.00cm" width="1.00cm" height="0.50cm"/>
+  <rect x="0.01cm" y="0.01cm" width="4.98cm" height="3.98cm" fill="none" stroke="blue" stroke-width=".02cm"/>
+</svg>
