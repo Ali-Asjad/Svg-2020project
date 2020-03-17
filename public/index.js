@@ -249,48 +249,7 @@ $(document).ready(function() {
 
     });
 
-    //Send an update request to the server
-    $("#uploadbtn").click(function(){
-
-        var propname = $('#ninput').val();
-        propname = propname.replace(/&lt;br&gt;/gi,""); 
-        var propvalue = $('#vinput').val();
-        propvalue = propvalue.replace(/&lt;br&gt;/gi,"");
-
-        var arrupdate = [filename,reqelement,reqnum,propname,propvalue];
-        
-        if (booladded == false){
-            alert("Select an item of SVG element!");
-        }else
-        {
-            $.ajax({
-                type: 'get',
-                dataType: 'json',
-                url: '/updateprop',
-                data: {
-                    paramjson: arrupdate
-                },
-                success: function (data) {
-                   if (data ==  true){
-                        alert ("succeessfully updated!")
-                        $('#ninput').val("");
-                        $('#vinput').val("");
-                        window.location.replace(window.location.href);
-                   }else{
-                        alert ("Updated failed! please input the correct data again!")
-                        window.location.replace(window.location.href);
-                   }
-                },
-                fail: function(error) {
-                    // Non-200 return, do something with error
-                    alert("On page load, received error from server");
-                    console.log(error);
-                }
-            });
-            
-        }
-
-    });
+    
 
     //create a new simple svg file
     $("#btn-create").click(function(){
